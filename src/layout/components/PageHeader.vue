@@ -99,7 +99,7 @@ function handleCommand(command) {
     commands[command] && commands[command]();
 }
 //TODO: 待修复
-//store.dispatch('user/refreshInfo');
+// store.dispatch('user/refreshInfo');
 </script>
 
 <style lang="scss">

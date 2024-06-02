@@ -48,7 +48,7 @@ function mock(module, isOpen = true) {
                         console.log('%cmock 拦截， 请求： ', 'color:blue', opts);
                         console.log('%cmock 拦截， 响应： ', 'color:blue', resData);
                         return resData;
-                    })
+                    });
                 }
             })(module[key]() || {});
         }

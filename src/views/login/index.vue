@@ -110,6 +110,6 @@ function doLogin() {
     line-height: 30px;
     margin-top: 0;
     margin-bottom: 10px;
-    color: #000
+    color: #000000
 }
 </style>
