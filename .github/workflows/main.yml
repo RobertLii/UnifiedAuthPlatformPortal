@@ -32,7 +32,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Install and Build
         run: |
-          npm install,
+          npm install
           npm run build
       # Deploy static resources
       - name: Deploy
