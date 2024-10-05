@@ -64,6 +64,7 @@ $side-width: 200px;
     .collapse-bar {
         font-size: 24px;
         line-height: 36px;
+        padding-left: 24px;
         .el-icon {
             cursor: pointer;
         }
