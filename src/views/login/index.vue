@@ -26,7 +26,7 @@ import { login } from '@/apis/login';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
-import { computed, reactive, ref } from 'vue';
+import { computed, reactive, ref, onMounted, onUnmounted } from 'vue';
 
 const router = useRouter();
 const { t, locale } = useI18n();
@@ -35,6 +35,7 @@ const form = reactive({
     account: "",
     password: ""
 });
+
 const rules = computed(() => {
     return {
         account: [
@@ -57,6 +58,20 @@ const rules = computed(() => {
         }
     };
 });
+
+onMounted(() => {
+    window.addEventListener('keydown', keyDownListener);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('keydown', keyDownListener, false);
+});
+const keyDownListener = (e) => {
+    // Enter键
+    if (e.keyCode == 13) {
+        doLogin();
+    }
+};
 
 const loading = ref(false);
 const store = useStore();
